@@ -2,7 +2,7 @@
 * Create a PGP key.
 * Use PGP to send an encrypted message to cecilia@safe2choose.org with your public PGP key attached. The public key you need for cecilia@safe2choose.org can be found here https://mega.nz/#!LNoVCDrK!FWnL-nPmo4XDuFpfFERPWerAYcxVcZUtFf2YaXw12fg
 * Create a Github account. For privacy and security reasons, create a new Github account just for these exercises
-* Clone this repository https://github.com/cecilia-s2c/webDevChallenge and copy the contents into the new project you just created.
+* Clone this repository https://github.com/cecilia-s2c/WebDeveloperChallenge and copy the contents into the new project you just created.
 
 # Step 1: Code review
 * Review the code into the "Step1" folder for security vulnerabilities. This Meteor project is meant to keep track of the number of times each user clicks on the button on the client. The count per user is recorded in two places: On the Meteor server that the app is connected to. On a server located at secure.safe2choose.org (this server does not actually exist).
