@@ -394,7 +394,15 @@ function bones_register_sidebars() {
     'before_title' => '<h2 class="h3 module__title">',
     'after_title' => '</h2>',
   ));
-
+  register_sidebar(array(
+    'id' => 'safe2choose-test',
+    'name' => __( 'Advertising Sidebar', 'bonestheme' ),
+    'description' => __( 'The advertising sidebar.', 'bonestheme' ),
+    'before_widget' => '<div id="%1$s" class="module module--primary cf %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3 class="h3 module__title">',
+    'after_title' => '</h3>',
+  ));
   
 } // don't remove this bracket!
 
