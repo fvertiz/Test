@@ -2,7 +2,12 @@
 
 add_filter('gform_register_init_scripts', 'gform_display_weeks', 10, 2);
 function gform_display_weeks($form) {
-
+/*
+#########
+Based on pre-defined responses from the user displays a realated answer showing the total days of pregancy in case of it,
+this days are approximaly calculated by the functions described bellow, 
+the answer is showed in the language detected.
+*/
 $script = <<<EOT
 
   (function($){
