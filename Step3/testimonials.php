@@ -60,10 +60,10 @@ Template Name: Testimonials Page
 					<section class="entry-content" itemprop="articleBody">
 
 						<?php
-							$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+							$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;//This is new
 							$testimonials_args = array (
 								'post_type' => 'testimonials',
-								'posts_per_page' => 6,
+								'posts_per_page' => 6,//This is new
 								'paged'          => $paged,
 								'orderby' => 'date',
 								'order' => 'DESC'
@@ -88,7 +88,9 @@ Template Name: Testimonials Page
 										<div class="quote" itemprop="review" itemscope="" itemtype="http://schema.org/Review">
 
 											<blockquote class="testimonials-text" itemprop="reviewBody">
-												<p><?php the_content(); ?></p>
+												<p><?php the_excerpt();//This is new ?></p>
+                                                <a href=”<?php the_permalink(); ?>” title=”Read the rest of
+												<?php the_title(); ?>” class=”more-link”>More»</a>
 												<hr>
 												<p><i><?php the_date(); ?></i></p>
 											</blockquote>
@@ -104,8 +106,8 @@ Template Name: Testimonials Page
 										</div><!-- End .quote -->
 
 									<?php } 
-                                    	next_posts_link(); 
-										previous_posts_link(); 
+                                    						next_posts_link();//This is new 
+										previous_posts_link(); //This is new
 									?>
 
 								</div><!-- /end .class="testimonials-list" -->
