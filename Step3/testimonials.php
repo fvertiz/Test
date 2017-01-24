@@ -60,10 +60,11 @@ Template Name: Testimonials Page
 					<section class="entry-content" itemprop="articleBody">
 
 						<?php
-
+							$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 							$testimonials_args = array (
 								'post_type' => 'testimonials',
-								'posts_per_page' => -1,
+								'posts_per_page' => 6,
+								'paged'          => $paged,
 								'orderby' => 'date',
 								'order' => 'DESC'
 							);
@@ -73,10 +74,9 @@ Template Name: Testimonials Page
 							if ( $testimonials_posts->have_posts() ) { ?>
 
 								<div class="testimonials-list">
-
-									<?php while ( $testimonials_posts->have_posts() ) {
-										$testimonials_posts->the_post();
-
+                                <?php                                	
+									 while ( $testimonials_posts->have_posts() ) {
+										$testimonials_posts->the_post();										
 										$thumb_src = null;
 										if ( has_post_thumbnail($post->ID) ) {
 											$src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
@@ -103,7 +103,10 @@ Template Name: Testimonials Page
 
 										</div><!-- End .quote -->
 
-									<?php } ?>
+									<?php } 
+                                    	next_posts_link(); 
+										previous_posts_link(); 
+									?>
 
 								</div><!-- /end .class="testimonials-list" -->
 
